@@ -35,7 +35,7 @@ namespace MyAirport.Pim.Model
             return null;
         }
 
-        public override List<BagageDefinition> GetBagage(string codeIata)
+        public override BagageDefinition GetBagage(string codeIata)
         {
 
             return null;

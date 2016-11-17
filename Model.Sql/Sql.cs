@@ -20,18 +20,17 @@ namespace Model.Sql
                                     "WHERE b.code_iata = @code "+
                                     "ORDER by b.id_bagage ";
 
-        public override List<BagageDefinition> GetBagage(string codeIata)
+        public override BagageDefinition GetBagage(string codeIata)
         {
-            List<BagageDefinition> MaListe = new List<BagageDefinition>();
             using (SqlConnection cnx = new SqlConnection(strcnx))
             {
                 SqlDataReader sdr;
-                BagageDefinition bag;
+                BagageDefinition bag = null;
                 SqlCommand cmd = new SqlCommand(commandGetBagage, cnx);
                 cmd.Parameters.AddWithValue("@code", codeIata);
                 cnx.Open();
                 sdr = cmd.ExecuteReader();
-                while(sdr.Read())
+                if(sdr.Read())
                 #region cache
                 {
                     bag = new BagageDefinition();
@@ -44,26 +43,15 @@ namespace Model.Sql
                     bag.CodeIata = sdr.GetString(sdr.GetOrdinal("code_iata"));
                     bag.Continuation = sdr[sdr.GetOrdinal("continuation")].ToString() == "Y" ? true : false;
                     bag.Rush = sdr.GetFieldValue<bool>(sdr.GetOrdinal("rush"));
-
-                    MaListe.Add(bag);
+                }
+                if(sdr.Read())
+                {
+                    throw new ApplicationException("Trop de résultats retournés");
                 }
                 #endregion
-            }
-            string maString = MaListe[0].ToString();
-            System.Diagnostics.Debug.WriteLine(maString);
-            System.Console.WriteLine(maString);
 
-            switch(MaListe.Count)
-            {
-                case 0:
-                    MaListe = null;
-                    return MaListe;
-                case 1:
-                    return MaListe;
-                default:
-                    throw new ApplicationException();
+                return bag;
             }
-            
         }
 
         public override BagageDefinition GetBagage(int idBagage)

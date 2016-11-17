@@ -29,24 +29,25 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbJourExploitation = new System.Windows.Forms.TextBox();
+            this.tbLigne = new System.Windows.Forms.TextBox();
+            this.tbAlpha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbCompagnie = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbRush = new System.Windows.Forms.CheckBox();
+            this.cbContinuation = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbClasseBag = new System.Windows.Forms.TextBox();
+            this.tbItineraire = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -55,15 +56,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 3);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 72);
+            this.groupBox1.Size = new System.Drawing.Size(594, 72);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recherche";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(513, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Find";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -78,56 +90,58 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(83, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(469, 20);
+            this.textBox1.Size = new System.Drawing.Size(419, 20);
             this.textBox1.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Location = new System.Drawing.Point(12, 74);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(0, 78);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(570, 214);
+            this.groupBox2.Size = new System.Drawing.Size(594, 222);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Résultat";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.tbJourExploitation);
+            this.groupBox4.Controls.Add(this.tbLigne);
+            this.groupBox4.Controls.Add(this.tbAlpha);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Location = new System.Drawing.Point(6, 19);
+            this.groupBox4.Controls.Add(this.tbCompagnie);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox4.Location = new System.Drawing.Point(3, 16);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(275, 189);
+            this.groupBox4.Size = new System.Drawing.Size(275, 203);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vol";
             // 
-            // textBox5
+            // tbJourExploitation
             // 
-            this.textBox5.Location = new System.Drawing.Point(124, 146);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(144, 20);
-            this.textBox5.TabIndex = 6;
+            this.tbJourExploitation.Location = new System.Drawing.Point(124, 146);
+            this.tbJourExploitation.Name = "tbJourExploitation";
+            this.tbJourExploitation.Size = new System.Drawing.Size(144, 20);
+            this.tbJourExploitation.TabIndex = 4;
             // 
-            // textBox4
+            // tbLigne
             // 
-            this.textBox4.Location = new System.Drawing.Point(196, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(73, 20);
-            this.textBox4.TabIndex = 5;
+            this.tbLigne.Location = new System.Drawing.Point(196, 91);
+            this.tbLigne.Name = "tbLigne";
+            this.tbLigne.Size = new System.Drawing.Size(73, 20);
+            this.tbLigne.TabIndex = 3;
             // 
-            // textBox3
+            // tbAlpha
             // 
-            this.textBox3.Location = new System.Drawing.Point(90, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.tbAlpha.Location = new System.Drawing.Point(90, 91);
+            this.tbAlpha.Name = "tbAlpha";
+            this.tbAlpha.Size = new System.Drawing.Size(100, 20);
+            this.tbAlpha.TabIndex = 2;
             // 
             // label4
             // 
@@ -156,47 +170,48 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Compagnie :";
             // 
-            // textBox2
+            // tbCompagnie
             // 
-            this.textBox2.Location = new System.Drawing.Point(90, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 0;
+            this.tbCompagnie.Location = new System.Drawing.Point(90, 37);
+            this.tbCompagnie.Name = "tbCompagnie";
+            this.tbCompagnie.Size = new System.Drawing.Size(179, 20);
+            this.tbCompagnie.TabIndex = 1;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.cbRush);
+            this.groupBox3.Controls.Add(this.cbContinuation);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Location = new System.Drawing.Point(287, 19);
+            this.groupBox3.Controls.Add(this.tbClasseBag);
+            this.groupBox3.Controls.Add(this.tbItineraire);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox3.Location = new System.Drawing.Point(296, 16);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(277, 189);
+            this.groupBox3.Size = new System.Drawing.Size(295, 203);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bagage";
             // 
-            // checkBox2
+            // cbRush
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(155, 144);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(51, 17);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Rush";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbRush.AutoSize = true;
+            this.cbRush.Location = new System.Drawing.Point(205, 144);
+            this.cbRush.Name = "cbRush";
+            this.cbRush.Size = new System.Drawing.Size(51, 17);
+            this.cbRush.TabIndex = 8;
+            this.cbRush.Text = "Rush";
+            this.cbRush.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbContinuation
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(20, 144);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Continuation";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbContinuation.AutoSize = true;
+            this.cbContinuation.Location = new System.Drawing.Point(60, 144);
+            this.cbContinuation.Name = "cbContinuation";
+            this.cbContinuation.Size = new System.Drawing.Size(85, 17);
+            this.cbContinuation.TabIndex = 7;
+            this.cbContinuation.Text = "Continuation";
+            this.cbContinuation.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -216,19 +231,19 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Itinéraire : ";
             // 
-            // textBox7
+            // tbClasseBag
             // 
-            this.textBox7.Location = new System.Drawing.Point(106, 91);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 1;
+            this.tbClasseBag.Location = new System.Drawing.Point(106, 91);
+            this.tbClasseBag.Name = "tbClasseBag";
+            this.tbClasseBag.Size = new System.Drawing.Size(100, 20);
+            this.tbClasseBag.TabIndex = 6;
             // 
-            // textBox6
+            // tbItineraire
             // 
-            this.textBox6.Location = new System.Drawing.Point(106, 37);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 0;
+            this.tbItineraire.Location = new System.Drawing.Point(106, 37);
+            this.tbItineraire.Name = "tbItineraire";
+            this.tbItineraire.Size = new System.Drawing.Size(100, 20);
+            this.tbItineraire.TabIndex = 5;
             // 
             // Form1
             // 
@@ -257,19 +272,20 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbJourExploitation;
+        private System.Windows.Forms.TextBox tbLigne;
+        private System.Windows.Forms.TextBox tbAlpha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox tbCompagnie;
+        private System.Windows.Forms.CheckBox cbRush;
+        private System.Windows.Forms.CheckBox cbContinuation;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbClasseBag;
+        private System.Windows.Forms.TextBox tbItineraire;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -10,7 +10,7 @@ namespace MyAirport.Pim.Model
     public abstract class AbstractDefinition
     {
         public abstract BagageDefinition GetBagage(int idBagage);
-        public abstract List<BagageDefinition> GetBagage(string codeIata);
+        public abstract BagageDefinition GetBagage(string codeIata);
         public abstract Entities.RoutageBagage GetInfoRoutage(int idBagage);
     }
 }

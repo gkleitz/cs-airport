@@ -21,11 +21,37 @@ namespace Client.FormIhm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var bagage = MyAirport.Pim.Model.Factory.Model.GetBagage(10);
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+            try
+            {
+                var bagage2 = MyAirport.Pim.Model.Factory.Model.GetBagage(this.textBox1.Text);
+                this.tbAlpha.Text = bagage2.LigneAlpha.ToString();
+                this.tbAlpha.Enabled = false;
+                this.tbClasseBag.Text = bagage2.ClasseBagage.ToString();
+                this.tbClasseBag.Enabled = false;
+                this.tbCompagnie.Text = bagage2.Compagnie;
+                this.tbCompagnie.Enabled = false;
+                this.tbItineraire.Text = bagage2.Itineraire;
+                this.tbItineraire.Enabled = false;
+                this.tbJourExploitation.Text = bagage2.DateCreation.ToString();
+                this.tbJourExploitation.Enabled = false;
+                this.tbLigne.Text = bagage2.Ligne.ToString();
+                this.tbLigne.Enabled = false;
+                this.cbContinuation.Checked = bagage2.Continuation;
+                this.cbContinuation.Enabled = false;
+                this.cbRush.Checked = bagage2.Rush;
+                this.cbRush.Enabled = false;
+            }
+            catch (ApplicationException appEx)
+            {
+                this.tbAlpha.Text = this.tbClasseBag.Text = this.tbCompagnie.Text = this.tbItineraire.Text = this.tbJourExploitation.Text = this.tbLigne.Text = "";
+                this.cbContinuation.Checked = this.cbRush.Checked = false;
+                this.tbAlpha.Enabled = this.tbClasseBag.Enabled = this.tbCompagnie.Enabled = this.tbItineraire.Enabled = this.tbJourExploitation.Enabled =
+                this.tbLigne.Enabled = this.cbContinuation.Enabled = this.cbRush.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("Une erreur s’est produite dans le traitement de votre demande.\nMerci de bien vouloir re tester ultérieurement ou de contacter votre administrateur.", "Erreur dans le traitement de votre demande", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
