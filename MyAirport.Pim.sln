@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.FormIhm", "Client.Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.Sql", "Model.Sql\Model.Sql.csproj", "{7A301A76-F213-452F-B6C1-0264C96B5464}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{02983ACE-503F-42A0-AE6C-0F403683C5B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicePim", "Service\ServicePim.csproj", "{02983ACE-503F-42A0-AE6C-0F403683C5B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
