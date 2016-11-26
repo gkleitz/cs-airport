@@ -8,7 +8,7 @@ using MyAirport.Pim.Entities;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace Model.Sql
+namespace MyAirport.Pim.Model
 {
     public class Sql : AbstractDefinition
     {
@@ -30,7 +30,7 @@ namespace Model.Sql
                 cmd.Parameters.AddWithValue("@code", codeIata);
                 cnx.Open();
                 sdr = cmd.ExecuteReader();
-                if(sdr.Read())
+                if (sdr.Read())
                 #region cache
                 {
                     bag = new BagageDefinition();
@@ -44,7 +44,7 @@ namespace Model.Sql
                     bag.Continuation = sdr[sdr.GetOrdinal("continuation")].ToString() == "Y" ? true : false;
                     bag.Rush = sdr.GetFieldValue<bool>(sdr.GetOrdinal("rush"));
                 }
-                if(sdr.Read())
+                if (sdr.Read())
                 {
                     throw new ApplicationException("Trop de résultats retournés");
                 }
@@ -62,11 +62,6 @@ namespace Model.Sql
         public override RoutageBagage GetInfoRoutage(int idBagage)
         {
             throw new NotImplementedException();
-        }
-
-        public Sql()
-        {
-            GetBagage("023232646700");
         }
     }
 }

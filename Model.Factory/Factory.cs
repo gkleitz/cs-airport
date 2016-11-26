@@ -18,9 +18,9 @@ namespace MyAirport.Pim.Model
                 {
                     switch(ConfigurationManager.AppSettings["Factory"])
                     {
-                        //case "Sql":
-                        //  singleton = new MyAirport.Pim.Model.Sql();
-                        //  break;
+                        case "Sql":
+                            singleton = new MyAirport.Pim.Model.Sql();
+                            break;
                         case "Natif":
                             singleton = new MyAirport.Pim.Model.Natif();
                             break;
